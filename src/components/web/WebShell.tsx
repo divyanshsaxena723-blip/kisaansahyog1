@@ -25,7 +25,8 @@ export const WebShell: React.FC<WebShellProps> = ({
   const {
     activeRole,
     farmerTab,
-    buyerTab
+    buyerTab,
+    openVoicebot
   } = useStore();
 
   const [inspectingListing, setInspectingListing] = useState<CropListing | null>(null);
@@ -40,26 +41,24 @@ export const WebShell: React.FC<WebShellProps> = ({
     }
   };
 
+  const effectiveOpenVoice = onOpenVoiceAssistant || (() => openVoicebot(undefined, true));
+
   const handleTriggerAiCopilot = (query?: string) => {
-    if (query) {
-      setCopilotQuery(query);
-    } else if (onOpenVoiceAssistant) {
-      onOpenVoiceAssistant();
-    }
+    openVoicebot(query, !query);
   };
 
   return (
     <div className="min-h-screen bg-[#FAF6EE] text-[#101F16] flex flex-col font-sans antialiased">
       {/* 1. Standardized Web Top Header */}
       <WebHeader
-        onOpenVoiceAssistant={onOpenVoiceAssistant}
+        onOpenVoiceAssistant={effectiveOpenVoice}
         onTriggerAiCopilot={handleTriggerAiCopilot}
       />
 
       {/* 2. Body Container with Left Sidebar & Right Workspace Area */}
       <div className="flex flex-1 min-h-[calc(100vh-4.5rem)]">
         {/* Left Sidebar Panel (w-64) */}
-        <WebSidebar onOpenVoiceAssistant={onOpenVoiceAssistant} />
+        <WebSidebar onOpenVoiceAssistant={effectiveOpenVoice} />
 
         {/* Right Main Stage Workspace */}
         <main className="flex-1 min-w-0 p-6 sm:p-8 bg-[#FAF6EE]">

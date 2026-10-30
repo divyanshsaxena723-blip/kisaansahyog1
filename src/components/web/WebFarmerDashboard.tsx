@@ -36,7 +36,8 @@ export const WebFarmerDashboard: React.FC<WebFarmerDashboardProps> = ({
     language,
     farmerProfile,
     setFarmerTab,
-    updateCostState
+    updateCostState,
+    openVoicebot
   } = useStore();
 
   const [chatInput, setChatInput] = useState(initialQuery || '');
@@ -102,26 +103,20 @@ export const WebFarmerDashboard: React.FC<WebFarmerDashboardProps> = ({
       text: pill.text,
       audioSec: '0:22'
     });
+    openVoicebot(pill.label);
   };
 
   const handleSendMessage = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!chatInput.trim()) return;
 
-    setActiveQuery(chatInput.trim());
-    setActiveAdvisory({
-      speaker: 'AI Sahyog Realtime',
-      time: 'अभी-अभी (Just now)',
-      text: `आपके प्रश्न "${chatInput.trim()}" का विश्लेषण: सीतापुर क्षेत्र में वर्षा व आर्द्रता को देखते हुए 48 घंटे तक किसी भी रासायनिक स्प्रे या सिंचाई को स्थगित रखें।`,
-      audioSec: '0:18'
-    });
+    const query = chatInput.trim();
+    setActiveQuery(query);
+    openVoicebot(query);
   };
 
   const handleAudioPlay = () => {
-    setIsPlayingAudio(true);
-    setTimeout(() => {
-      setIsPlayingAudio(false);
-    }, 3000);
+    openVoicebot(activeQuery);
   };
 
   const handleLeafScan = () => {

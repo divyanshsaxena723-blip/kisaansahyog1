@@ -46,6 +46,8 @@ interface AppState {
   isTourOpen: boolean;
   isNotificationsOpen: boolean;
   isVoiceModalOpen: boolean;
+  voiceInitialPrompt: string | null;
+  voiceAutoListen: boolean;
   selectedDealDetailId: string | null;
 
   // Personas
@@ -75,6 +77,9 @@ interface AppState {
   setIsTourOpen: (open: boolean) => void;
   setIsNotificationsOpen: (open: boolean) => void;
   setIsVoiceModalOpen: (open: boolean) => void;
+  setVoiceInitialPrompt: (prompt: string | null) => void;
+  setVoiceAutoListen: (listen: boolean) => void;
+  openVoicebot: (prompt?: string, autoListen?: boolean) => void;
   setSelectedDealDetailId: (dealId: string | null) => void;
 
   login: (
@@ -152,6 +157,8 @@ export const useStore = create<AppState>()(
         isTourOpen: false,
         isNotificationsOpen: false,
         isVoiceModalOpen: false,
+        voiceInitialPrompt: null,
+        voiceAutoListen: false,
         selectedDealDetailId: null,
 
         farmerProfile: INITIAL_FARMER_PROFILE,
@@ -183,7 +190,16 @@ export const useStore = create<AppState>()(
         setIsAuthModalOpen: (open) => set({ isAuthModalOpen: open }),
         setIsTourOpen: (open) => set({ isTourOpen: open }),
         setIsNotificationsOpen: (open) => set({ isNotificationsOpen: open }),
-        setIsVoiceModalOpen: (open) => set({ isVoiceModalOpen: open }),
+        setIsVoiceModalOpen: (open) => set({ isVoiceModalOpen: open, voiceInitialPrompt: null, voiceAutoListen: false }),
+        setVoiceInitialPrompt: (prompt) => set({ voiceInitialPrompt: prompt }),
+        setVoiceAutoListen: (listen) => set({ voiceAutoListen: listen }),
+        openVoicebot: (prompt?: string, autoListen?: boolean) => {
+          set({
+            isVoiceModalOpen: true,
+            voiceInitialPrompt: prompt || null,
+            voiceAutoListen: autoListen !== undefined ? autoListen : !prompt
+          });
+        },
         setSelectedDealDetailId: (dealId) => set({ selectedDealDetailId: dealId }),
 
         login: (

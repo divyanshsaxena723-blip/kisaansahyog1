@@ -1,0 +1,678 @@
+{
+ "_README": "Typical sowing and harvest times by crop and state. 'sow' is [start month, start day, end month, end day]; 'harvest' is [first month, last month]; 'cycle_months' is the number of months from the first sowing month to the LAST harvest month (for example wheat sown in October and harvested until May is 7). checked=true means the dates were taken from PAU advice; checked=false means they are typical values that still need checking against the PAU / state guide. Edit freely: the bot reads this file at start-up.",
+ "_sources": [
+  "PAU advice on wheat sowing: last week of October to first fortnight of November, reported by The Tribune and PAU farm operations for November",
+  "Wheat harvest in April or May in Punjab: Indian Journal of Agronomy (Punjab sowing-date study)",
+  "PAU: paddy transplanting from mid-June to early July; kharif crops such as rice and maize are harvested in October-November",
+  "PAU kharif maize: sow in the second fortnight of June, harvest in the first fortnight of October"
+ ],
+ "crops": {
+  "wheat": {
+   "Punjab": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      25,
+      11,
+      15
+     ],
+     "sow_text": "the last week of October to 15 November (PAU: finish by 15 November)",
+     "harvest": [
+      4,
+      5
+     ],
+     "harvest_text": "April (early May at the latest)",
+     "cycle_months": 7,
+     "checked": true,
+     "note": "Sowing after 15 November lowers the yield by about 1 to 1.5 quintal per acre for every week of delay (PAU)."
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "rabi",
+     "sow": [
+      11,
+      1,
+      11,
+      25
+     ],
+     "sow_text": "November (timely sowing up to about 25 November)",
+     "harvest": [
+      3,
+      4
+     ],
+     "harvest_text": "March to April",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ]
+  },
+  "rice": {
+   "Punjab": [
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      15,
+      7,
+      5
+     ],
+     "sow_text": "mid-June to early July (transplanting; nursery about a month earlier)",
+     "harvest": [
+      10,
+      11
+     ],
+     "harvest_text": "October to November",
+     "cycle_months": 5,
+     "checked": true
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      20,
+      7,
+      20
+     ],
+     "sow_text": "late June to July (transplanting; nursery about a month earlier)",
+     "harvest": [
+      10,
+      11
+     ],
+     "harvest_text": "October to November",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ]
+  },
+  "maize": {
+   "Punjab": [
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      15,
+      6,
+      30
+     ],
+     "sow_text": "the second half of June",
+     "harvest": [
+      10,
+      10
+     ],
+     "harvest_text": "the first half of October",
+     "cycle_months": 4,
+     "checked": true,
+     "note": "PAU prefers kharif maize to spring maize, because spring maize needs much more water."
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      15,
+      11,
+      20
+     ],
+     "sow_text": "mid-October to November",
+     "harvest": [
+      3,
+      4
+     ],
+     "harvest_text": "March to April",
+     "cycle_months": 6,
+     "checked": false
+    },
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      15,
+      7,
+      15
+     ],
+     "sow_text": "mid-June to mid-July",
+     "harvest": [
+      9,
+      10
+     ],
+     "harvest_text": "September to October",
+     "cycle_months": 4,
+     "checked": false
+    }
+   ]
+  },
+  "cotton": {
+   "Punjab": [
+    {
+     "season": "kharif",
+     "sow": [
+      4,
+      15,
+      5,
+      15
+     ],
+     "sow_text": "mid-April to mid-May",
+     "harvest": [
+      10,
+      12
+     ],
+     "harvest_text": "October to December (picking in rounds)",
+     "cycle_months": 8,
+     "checked": false
+    }
+   ]
+  },
+  "sugarcane": {
+   "Punjab": [
+    {
+     "season": "spring planting",
+     "sow": [
+      2,
+      15,
+      3,
+      31
+     ],
+     "sow_text": "mid-February to March (autumn planting up to October is also done)",
+     "harvest": [
+      11,
+      3
+     ],
+     "harvest_text": "November to March of the next year (about 10 to 12 months)",
+     "cycle_months": 13,
+     "checked": false
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "spring planting",
+     "sow": [
+      2,
+      15,
+      3,
+      31
+     ],
+     "sow_text": "mid-February to March (autumn planting in October is also done)",
+     "harvest": [
+      11,
+      4
+     ],
+     "harvest_text": "November to April of the next year (about 10 to 12 months)",
+     "cycle_months": 14,
+     "checked": false
+    }
+   ]
+  },
+  "potato": {
+   "Punjab": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      1,
+      10,
+      31
+     ],
+     "sow_text": "October",
+     "harvest": [
+      1,
+      3
+     ],
+     "harvest_text": "January to early March",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      15,
+      11,
+      15
+     ],
+     "sow_text": "mid-October to mid-November",
+     "harvest": [
+      1,
+      3
+     ],
+     "harvest_text": "January to March",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ]
+  },
+  "mustard": {
+   "Punjab": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      1,
+      11,
+      10
+     ],
+     "sow_text": "October to early November (raya early, gobhi sarson a little later)",
+     "harvest": [
+      3,
+      4
+     ],
+     "harvest_text": "March to April",
+     "cycle_months": 6,
+     "checked": false
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      1,
+      11,
+      10
+     ],
+     "sow_text": "October to early November",
+     "harvest": [
+      2,
+      3
+     ],
+     "harvest_text": "February to March",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ]
+  },
+  "moong": {
+   "Punjab": [
+    {
+     "season": "summer",
+     "sow": [
+      3,
+      15,
+      4,
+      20
+     ],
+     "sow_text": "mid-March to April, after the wheat or potato harvest",
+     "harvest": [
+      6,
+      6
+     ],
+     "harvest_text": "June (about 70 days)",
+     "cycle_months": 3,
+     "checked": false
+    },
+    {
+     "season": "kharif",
+     "sow": [
+      7,
+      1,
+      7,
+      31
+     ],
+     "sow_text": "July",
+     "harvest": [
+      9,
+      10
+     ],
+     "harvest_text": "September to October",
+     "cycle_months": 3,
+     "checked": false
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "summer",
+     "sow": [
+      3,
+      15,
+      4,
+      20
+     ],
+     "sow_text": "mid-March to April",
+     "harvest": [
+      5,
+      6
+     ],
+     "harvest_text": "May to June",
+     "cycle_months": 3,
+     "checked": false
+    },
+    {
+     "season": "kharif",
+     "sow": [
+      7,
+      1,
+      7,
+      31
+     ],
+     "sow_text": "July",
+     "harvest": [
+      9,
+      10
+     ],
+     "harvest_text": "September to October",
+     "cycle_months": 3,
+     "checked": false
+    }
+   ]
+  },
+  "sunflower": {
+   "Punjab": [
+    {
+     "season": "spring",
+     "sow": [
+      1,
+      15,
+      2,
+      28
+     ],
+     "sow_text": "mid-January to February (about 100 days)",
+     "harvest": [
+      4,
+      5
+     ],
+     "harvest_text": "April to May",
+     "cycle_months": 4,
+     "checked": false
+    }
+   ]
+  },
+  "bajra": {
+   "Punjab": [
+    {
+     "season": "kharif",
+     "sow": [
+      7,
+      1,
+      7,
+      31
+     ],
+     "sow_text": "July",
+     "harvest": [
+      9,
+      10
+     ],
+     "harvest_text": "September to October",
+     "cycle_months": 3,
+     "checked": false
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      25,
+      7,
+      25
+     ],
+     "sow_text": "late June to July",
+     "harvest": [
+      9,
+      10
+     ],
+     "harvest_text": "September to October",
+     "cycle_months": 4,
+     "checked": false
+    }
+   ]
+  },
+  "jowar": {
+   "Punjab": [
+    {
+     "season": "kharif fodder",
+     "sow": [
+      4,
+      1,
+      7,
+      15
+     ],
+     "sow_text": "April to mid-July",
+     "harvest": [
+      7,
+      10
+     ],
+     "harvest_text": "cut about 2 to 3 months after sowing",
+     "cycle_months": 6,
+     "checked": false
+    }
+   ]
+  },
+  "berseem": {
+   "Punjab": [
+    {
+     "season": "rabi fodder",
+     "sow": [
+      10,
+      1,
+      11,
+      15
+     ],
+     "sow_text": "October to mid-November",
+     "harvest": [
+      12,
+      5
+     ],
+     "harvest_text": "cuts from December to May",
+     "cycle_months": 7,
+     "checked": false
+    }
+   ]
+  },
+  "peas": {
+   "Punjab": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      15,
+      11,
+      10
+     ],
+     "sow_text": "mid-October to early November",
+     "harvest": [
+      1,
+      3
+     ],
+     "harvest_text": "green pods from about January to March",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ],
+   "Uttar Pradesh": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      15,
+      11,
+      15
+     ],
+     "sow_text": "mid-October to mid-November",
+     "harvest": [
+      12,
+      2
+     ],
+     "harvest_text": "green pods from about December to February",
+     "cycle_months": 4,
+     "checked": false
+    }
+   ]
+  },
+  "onion": {
+   "Punjab": [
+    {
+     "season": "rabi",
+     "sow": [
+      12,
+      15,
+      1,
+      31
+     ],
+     "sow_text": "seedlings transplanted from mid-December to January",
+     "harvest": [
+      4,
+      5
+     ],
+     "harvest_text": "April to May",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ]
+  },
+  "kinnow": {
+   "Punjab": [
+    {
+     "season": "orchard",
+     "sow": [
+      2,
+      15,
+      3,
+      31
+     ],
+     "sow_text": "young trees in February-March (or August-September)",
+     "harvest": [
+      12,
+      2
+     ],
+     "harvest_text": "established trees give fruit from about December to February",
+     "cycle_months": 12,
+     "checked": false,
+     "perennial": true
+    }
+   ]
+  },
+  "chickpea": {
+   "Uttar Pradesh": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      15,
+      11,
+      20
+     ],
+     "sow_text": "mid-October to November",
+     "harvest": [
+      3,
+      4
+     ],
+     "harvest_text": "March to April",
+     "cycle_months": 6,
+     "checked": false
+    }
+   ]
+  },
+  "arhar": {
+   "Uttar Pradesh": [
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      15,
+      7,
+      15
+     ],
+     "sow_text": "mid-June to mid-July",
+     "harvest": [
+      11,
+      1
+     ],
+     "harvest_text": "November to January (long-duration varieties)",
+     "cycle_months": 7,
+     "checked": false
+    }
+   ]
+  },
+  "masoor": {
+   "Uttar Pradesh": [
+    {
+     "season": "rabi",
+     "sow": [
+      10,
+      15,
+      11,
+      25
+     ],
+     "sow_text": "mid-October to November",
+     "harvest": [
+      3,
+      3
+     ],
+     "harvest_text": "March",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ]
+  },
+  "urad": {
+   "Uttar Pradesh": [
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      25,
+      7,
+      31
+     ],
+     "sow_text": "late June to July",
+     "harvest": [
+      9,
+      10
+     ],
+     "harvest_text": "September to October",
+     "cycle_months": 4,
+     "checked": false
+    }
+   ]
+  },
+  "groundnut": {
+   "Uttar Pradesh": [
+    {
+     "season": "kharif",
+     "sow": [
+      6,
+      15,
+      7,
+      15
+     ],
+     "sow_text": "mid-June to mid-July",
+     "harvest": [
+      10,
+      11
+     ],
+     "harvest_text": "October to November",
+     "cycle_months": 5,
+     "checked": false
+    }
+   ]
+  },
+  "mango": {
+   "Uttar Pradesh": [
+    {
+     "season": "orchard",
+     "sow": [
+      7,
+      1,
+      8,
+      31
+     ],
+     "sow_text": "young trees in July-August (monsoon)",
+     "harvest": [
+      6,
+      7
+     ],
+     "harvest_text": "established trees give fruit from about June to July",
+     "cycle_months": 12,
+     "checked": false,
+     "perennial": true
+    }
+   ]
+  }
+ }
+}

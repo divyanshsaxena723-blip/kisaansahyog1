@@ -29,7 +29,8 @@ export const WebHeader: React.FC<WebHeaderProps> = ({
     setIsAuthModalOpen,
     farmerProfile,
     buyerProfile,
-    logout
+    logout,
+    openVoicebot
   } = useStore();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -38,10 +39,18 @@ export const WebHeader: React.FC<WebHeaderProps> = ({
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (searchQuery.trim() && onTriggerAiCopilot) {
-      onTriggerAiCopilot(searchQuery.trim());
-    } else if (onOpenVoiceAssistant) {
-      onOpenVoiceAssistant();
+    if (searchQuery.trim()) {
+      if (onTriggerAiCopilot) {
+        onTriggerAiCopilot(searchQuery.trim());
+      } else {
+        openVoicebot(searchQuery.trim());
+      }
+    } else {
+      if (onOpenVoiceAssistant) {
+        onOpenVoiceAssistant();
+      } else {
+        openVoicebot(undefined, true);
+      }
     }
   };
 
@@ -77,7 +86,10 @@ export const WebHeader: React.FC<WebHeaderProps> = ({
           />
           <button
             type="button"
-            onClick={onOpenVoiceAssistant}
+            onClick={() => {
+              if (onOpenVoiceAssistant) onOpenVoiceAssistant();
+              else openVoicebot(undefined, true);
+            }}
             className="w-7 h-7 rounded-full bg-[#2C5E2E] text-white flex items-center justify-center absolute right-1.5 hover:bg-emerald-800 transition-colors shadow-xs"
             title="बोलकर पूछें (Voice Search in Hindi)"
           >
@@ -92,10 +104,13 @@ export const WebHeader: React.FC<WebHeaderProps> = ({
         <button
           type="button"
           onClick={() => {
+            const query = 'सीतापुर में आज का गेहूं भाव और मौसम पूर्वानुमान क्या है?';
             if (onTriggerAiCopilot) {
-              onTriggerAiCopilot('सीतापुर में आज का गेहूं भाव और मौसम पूर्वानुमान क्या है?');
+              onTriggerAiCopilot(query);
             } else if (onOpenVoiceAssistant) {
               onOpenVoiceAssistant();
+            } else {
+              openVoicebot(query);
             }
           }}
           className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-300 hover:bg-amber-100 text-xs font-bold transition-colors shadow-2xs"

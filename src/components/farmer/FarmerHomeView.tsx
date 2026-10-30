@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 
 export const FarmerHomeView: React.FC = () => {
-  const { language, setFarmerTab, farmerProfile } = useStore();
+  const { language, setFarmerTab, farmerProfile, openVoicebot } = useStore();
 
   const [isListening, setIsListening] = useState(false);
   const [userQuery, setUserQuery] = useState(
@@ -36,51 +36,12 @@ export const FarmerHomeView: React.FC = () => {
 
   const handleChipClick = (chip: typeof VOICE_PROMPT_QUICK_CHIPS[0]) => {
     setUserQuery(chip.query);
-    if (chip.id === 'p1') {
-      setActiveAdvisory({
-        speaker: 'AI Sahyog Weather Desk',
-        time: 'अभी-अभी (Live)',
-        text: 'सीतापुर में अगले 48 घंटों में 85% भारी बारिश की संभावना है। नलकूप बंद रखें, खेत में जलभराव न होने दें।'
-      });
-    } else if (chip.id === 'p2') {
-      setActiveAdvisory({
-        speaker: 'AI Sahyog Fuel Saver',
-        time: 'अभी-अभी (Live)',
-        text: 'वर्षा के कारण 6 घंटे की पम्पिंग स्थगित करने से लगभग 14-16 लीटर डीजल बचेगा, जिससे आपकी सीधी ₹1,450 की बचत होगी।'
-      });
-    } else if (chip.id === 'p3') {
-      setActiveAdvisory({
-        speaker: 'AI Sahyog Mandi Desk',
-        time: 'अभी-अभी (Live)',
-        text: 'आज सीतापुर व इंदौर मंडी में शरबती गेहूं ₹2,585 - ₹2,850/क्विंटल पर बिका। सरकारी MSP ₹2,425 से यह +₹425 अधिक है।'
-      });
-    } else if (chip.id === 'p4') {
-      setActiveAdvisory({
-        speaker: 'AI Agronomy Doctor',
-        time: 'अभी-अभी (Live)',
-        text: 'पीला रतुआ दिखने पर प्रोपिकोनाजोल 25% EC (टिल्ट) 1 मिलीलीटर प्रति लीटर पानी में मिलाकर तुरंत छिड़काव करें।'
-      });
-    } else {
-      setActiveAdvisory({
-        speaker: 'AI Market Advisory',
-        time: 'अभी-अभी (Live)',
-        text: 'सरसों में इस सप्ताह मिलों की भारी मांग है। ₹6,200/क्विंटल से अधिक भाव पर 50% स्टॉक निकालना अत्यंत लाभकारी रहेगा।'
-      });
-    }
+    const promptText = `${chip.emoji} ${chip.textEn}`;
+    openVoicebot(promptText);
   };
 
   const handleMicToggle = () => {
-    setIsListening((prev) => !prev);
-    if (!isListening) {
-      setTimeout(() => {
-        setIsListening(false);
-        setActiveAdvisory({
-          speaker: 'AI Sahyog Voice',
-          time: 'अभी-अभी (Voice Reply)',
-          text: 'आपकी आवाज़ दर्ज हुई: "मौसम अनुकूल है, आगामी 48 घंटे में यूरिया टॉप ड्रेसिंग रोक दें क्योंकि भारी बारिश से खाद बह सकती है।"'
-        });
-      }, 3500);
-    }
+    openVoicebot(undefined, true);
   };
 
   const handleLeafScan = () => {
@@ -184,13 +145,17 @@ export const FarmerHomeView: React.FC = () => {
       {/* 2. Interactive Voice Agronomy Experience & Dialogue Simulator */}
       <div className="rounded-3xl bg-white p-5 sm:p-7 shadow-sm border border-emerald-900/10 space-y-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-gray-100 pb-4">
-          <div className="flex items-center gap-2.5">
+          <div
+            onClick={() => openVoicebot(undefined, true)}
+            className="flex items-center gap-2.5 cursor-pointer group"
+            title="बोलकर पूछें (Open Voice Assistant)"
+          >
             <div className="relative">
               <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block animate-ping absolute inset-0" />
               <span className="w-3 h-3 rounded-full bg-emerald-600 inline-block relative" />
             </div>
             <div>
-              <h2 className="text-lg font-extrabold text-[#101F16]">
+              <h2 className="text-lg font-extrabold text-[#101F16] group-hover:text-[#2C5E2E] transition-colors">
                 {language === 'hi' ? 'AI सहयोग वॉइस एग्रोनॉमिस्ट' : 'AI Sahyog Voice Agronomist'}
               </h2>
               <p className="text-xs text-[#4A2C17]/70">

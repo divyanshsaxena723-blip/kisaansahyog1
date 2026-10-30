@@ -1,0 +1,29 @@
+{
+ "_README": "Rules used when a farmer reads out the levels (low / medium / high) from their Soil Health Card. Every rule below is taken from a source note that is ALREADY in fertilizers.json (ICAR-IISS Bhopal district-wise recommendations), nothing is invented. 'action' is 'skip' (leave that nutrient out) or 'reduce' (cut it by 'percent'). Only phosphorus rules exist, because those are the only card-based rules in the data so far. To add a rule for nitrogen or potash, add an entry here ONLY after finding it in an ICAR or PAU document, and write that document in 'source'. A farmer's card values that match no rule are noted on screen, but the amounts do not change.",
+ "rules": [
+  {
+   "crop": "rice", "state": "Punjab", "nutrient": "phosphorus", "levels": ["medium", "high"],
+   "action": "skip",
+   "text": "Your Soil Health Card shows {level} phosphorus, so DAP is left out for this crop (ICAR: in medium-to-high phosphorus soils, phosphorus can be skipped for the kharif crop).",
+   "source": "fertilizers.json notes: rice|Punjab (ICAR-IISS Bhopal)"
+  },
+  {
+   "crop": "maize", "state": "Punjab", "nutrient": "phosphorus", "levels": ["medium", "high"],
+   "action": "skip",
+   "text": "Your Soil Health Card shows {level} phosphorus, so DAP is left out for this crop (ICAR: in medium-to-high phosphorus soils, phosphorus can be skipped for the kharif crop).",
+   "source": "fertilizers.json notes: maize|Punjab (ICAR-IISS Bhopal)"
+  },
+  {
+   "crop": "wheat", "state": "Punjab", "nutrient": "phosphorus", "levels": ["high"],
+   "action": "skip",
+   "text": "Your Soil Health Card shows high phosphorus, so DAP is left out and the urea is increased to make up the nitrogen that DAP would have given (ICAR: in high phosphorus soils, phosphorus can be skipped for 2 to 3 years).",
+   "source": "fertilizers.json notes: wheat|Punjab (ICAR-IISS Bhopal)"
+  },
+  {
+   "crop": "sugarcane", "state": "Uttar Pradesh", "nutrient": "phosphorus", "levels": ["high"],
+   "action": "reduce", "percent": 25,
+   "text": "Your Soil Health Card shows high phosphorus, so the phosphorus (DAP) is reduced by 25% (ICAR: in high phosphorus soils, reduce the phosphorus dose by 25%).",
+   "source": "fertilizers.json notes: sugarcane|Uttar Pradesh (ICAR-IISS Bhopal)"
+  }
+ ]
+}
