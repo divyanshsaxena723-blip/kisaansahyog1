@@ -5,6 +5,7 @@ import { AICopilotModal } from './components/common/AICopilotModal';
 import { NotificationDrawer } from './components/common/NotificationDrawer';
 import { TourModal } from './components/common/TourModal';
 import { AuthModal } from './components/common/AuthModal';
+import { UnifiedAuthModal } from './components/common/UnifiedAuthModal';
 import { WebLoginModal } from './components/web/WebLoginModal';
 import { WebLandingPage } from './components/web/WebLandingPage';
 import { WebShell } from './components/web/WebShell';
@@ -33,34 +34,18 @@ export default function App() {
 
       {/* 1. If not authenticated or on landing/login page: */}
       {!isAuthenticated || currentPage === 'landing' || currentPage === 'login' ? (
-        viewMode === 'web' ? (
-          currentPage === 'login' ? (
-            <WebLoginModal
-              onLoginSuccess={(role) => {
-                login(role);
-              }}
-              onBack={() => setCurrentPage('landing')}
-            />
-          ) : (
-            <WebLandingPage
-              onGetStarted={() => setCurrentPage('login')}
-              onExploreMarket={() => {
-                // Allows exploring without login or goes to login
-                setCurrentPage('login');
-              }}
-            />
-          )
+        currentPage === 'login' ? (
+          <UnifiedAuthModal />
+        ) : viewMode === 'web' ? (
+          <WebLandingPage
+            onGetStarted={() => setCurrentPage('login')}
+            onExploreMarket={() => {
+              // Allows exploring without login or goes to login
+              setCurrentPage('login');
+            }}
+          />
         ) : (
-          /* Mobile App view */
-          currentPage === 'login' ? (
-            <MobileLoginScreen
-              onLoginSuccess={(role) => {
-                login(role);
-              }}
-            />
-          ) : (
-            <MobileTourScreen onFinish={() => setCurrentPage('login')} />
-          )
+          <MobileTourScreen onFinish={() => setCurrentPage('login')} />
         )
       ) : (
         /* 2. Authenticated Dashboard View */

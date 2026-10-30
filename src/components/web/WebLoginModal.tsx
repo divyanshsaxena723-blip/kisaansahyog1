@@ -1,13 +1,8 @@
 import React from 'react';
-import { WebLoginPage } from './WebLoginPage';
+import { UnifiedAuthModal } from '../common/UnifiedAuthModal';
 
-interface WebLoginModalProps {
-  onLoginSuccess?: (role: 'farmer' | 'buyer') => void;
-  onBack?: () => void;
-}
-
-export const WebLoginModal: React.FC<WebLoginModalProps> = ({ onLoginSuccess, onBack }) => {
-  return <WebLoginPage onLoginSuccess={onLoginSuccess} onBack={onBack} />;
+export const WebLoginModal: React.FC = () => {
+  return <UnifiedAuthModal />;
 };
 
 export default WebLoginModal;

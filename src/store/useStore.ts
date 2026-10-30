@@ -22,6 +22,13 @@ import {
 export type FarmerTab = 'home' | 'profit' | 'listings' | 'deals';
 export type BuyerTab = 'bazaar' | 'orders' | 'profile';
 
+export interface UserProfile {
+  name: string;
+  location: string;
+  contact: string; // phone or email
+  role: 'farmer' | 'buyer';
+}
+
 interface AppState {
   // Navigation & Authentication
   activeRole: UserRole;
@@ -33,6 +40,8 @@ interface AppState {
   language: SupportedLanguage;
   isAuthenticated: boolean;
   userPhone: string;
+  userProfile: UserProfile | null;
+  setUserProfile: (profile: UserProfile) => void;
   isAuthModalOpen: boolean;
   isTourOpen: boolean;
   isNotificationsOpen: boolean;
@@ -69,7 +78,7 @@ interface AppState {
   setSelectedDealDetailId: (dealId: string | null) => void;
 
   login: (
-    roleOrPhone?: UserRole | string,
+    roleOrProfile?: UserRole | UserProfile | string,
     phoneOrRole?: string | UserRole,
     profileMeta?: { name?: string; location?: string }
   ) => void;
@@ -137,6 +146,8 @@ export const useStore = create<AppState>()(
         language: 'hi',
         isAuthenticated: false,
         userPhone: '+91 94250 82194',
+        userProfile: null,
+        setUserProfile: (userProfile) => set({ userProfile }),
         isAuthModalOpen: false,
         isTourOpen: false,
         isNotificationsOpen: false,
@@ -176,28 +187,83 @@ export const useStore = create<AppState>()(
         setSelectedDealDetailId: (dealId) => set({ selectedDealDetailId: dealId }),
 
         login: (
-          roleOrPhone = 'farmer',
+          roleOrProfile: UserRole | UserProfile | string = 'farmer',
           phoneOrRole = '+91 94250 82194',
           profileMeta?: { name?: string; location?: string }
         ) => {
+          // If called with UserProfile object from UnifiedAuthModal
+          if (typeof roleOrProfile === 'object' && roleOrProfile !== null && 'role' in roleOrProfile) {
+            const profile = roleOrProfile as UserProfile;
+            const role = profile.role;
+            const phone = profile.contact;
+            const parts = (profile.location || '').split(',').map((s) => s.trim());
+
+            set((state) => ({
+              isAuthenticated: true,
+              userProfile: profile,
+              userPhone: phone,
+              activeRole: role,
+              userRole: role,
+              currentPage: 'dashboard',
+              isAuthModalOpen: false,
+              farmerProfile:
+                role === 'farmer'
+                  ? {
+                      ...state.farmerProfile,
+                      name: profile.name,
+                      phone: profile.contact,
+                      district: parts[0] || state.farmerProfile.district,
+                      state: parts[1] || state.farmerProfile.state
+                    }
+                  : state.farmerProfile,
+              buyerProfile:
+                role === 'buyer'
+                  ? {
+                      ...state.buyerProfile,
+                      name: profile.name,
+                      phone: profile.contact,
+                      city: parts[0] || state.buyerProfile.city,
+                      state: parts[1] || state.buyerProfile.state
+                    }
+                  : state.buyerProfile
+            }));
+            return;
+          }
+
           let role: UserRole = 'farmer';
           let phone = '+91 94250 82194';
 
-          if (roleOrPhone === 'farmer' || roleOrPhone === 'buyer') {
-            role = roleOrPhone;
+          if (roleOrProfile === 'farmer' || roleOrProfile === 'buyer') {
+            role = roleOrProfile;
             if (typeof phoneOrRole === 'string' && phoneOrRole) {
               phone = phoneOrRole;
             }
-          } else if (typeof roleOrPhone === 'string') {
-            phone = roleOrPhone;
+          } else if (typeof roleOrProfile === 'string') {
+            phone = roleOrProfile;
             if (phoneOrRole === 'farmer' || phoneOrRole === 'buyer') {
               role = phoneOrRole;
             }
           }
 
           set((state) => {
+            const resolvedName =
+              profileMeta?.name || (role === 'farmer' ? state.farmerProfile.name : state.buyerProfile.name);
+            const resolvedLocation =
+              profileMeta?.location ||
+              (role === 'farmer'
+                ? `${state.farmerProfile.district}, ${state.farmerProfile.state}`
+                : `${state.buyerProfile.city}, ${state.buyerProfile.state}`);
+
+            const newProfile: UserProfile = {
+              name: resolvedName,
+              location: resolvedLocation,
+              contact: phone,
+              role: role
+            };
+
             const newState: Partial<AppState> = {
               isAuthenticated: true,
+              userProfile: newProfile,
               userPhone: phone,
               activeRole: role,
               userRole: role,
@@ -233,10 +299,12 @@ export const useStore = create<AppState>()(
           });
         },
 
-        logout: () => set({
-          isAuthenticated: false,
-          currentPage: 'landing'
-        }),
+        logout: () =>
+          set({
+            isAuthenticated: false,
+            userProfile: null,
+            currentPage: 'landing'
+          }),
 
       updateFarmerProfile: (updates) => set((state) => ({
         farmerProfile: { ...state.farmerProfile, ...updates }
