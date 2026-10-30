@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canopy: #2C5E2E;
+  --color-canopy-dark: #1E4320;
+  --color-canopy-light: #3D7F40;
+  --color-harvest-gold: #E0A526;
+  --color-harvest-gold-light: #F3BC48;
+  --color-loam-cream: #FAF6EE;
+  --color-loam-surface: #F4EEDB;
+  --color-topsoil: #4A2C17;
+  --color-sync-pill-bg: #DCFCE7;
+  --color-sync-pill-text: #166534;
+  --font-sans: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #FAF6EE;
+    color: #101F16;
+    font-family: 'Nunito Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Safe area padding utilities */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Custom scrollbar hiding for horizontal chip rails */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pulse animation utility */
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 3s ease-in-out infinite;
+}

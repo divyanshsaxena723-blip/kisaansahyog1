@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-on-surface":"#e4f5e7","on-surface":"#101f16","surface-variant":"#d5e7d9","on-secondary-container":"#19722b","on-surface-variant":"#40493d","on-error-container":"#93000a","surface-container-low":"#e7f8e9","on-error":"#ffffff","on-primary":"#ffffff","primary-container":"#2e7d32","surface":"#ecfeef","on-tertiary-container":"#e5f4ff","surface-dim":"#cdded0","error-container":"#ffdad6","on-tertiary-fixed":"#0f1d25","tertiary":"#495760","on-background":"#101f16","outline-variant":"#bfcaba","tertiary-fixed":"#d6e5ef","primary-fixed-dim":"#88d982","surface-container-highest":"#d5e7d9","on-tertiary":"#ffffff","error":"#ba1a1a","primary":"#0d631b","on-secondary":"#ffffff","surface-container-high":"#dbedde","on-tertiary-fixed-variant":"#3b4951","background":"#ecfeef","surface-container":"#e1f2e4","surface-tint":"#1b6d24","on-secondary-fixed-variant":"#005318","secondary":"#126d27","secondary-container":"#9cf49c","secondary-fixed-dim":"#83da85","primary-fixed":"#a3f69c","on-primary-container":"#cbffc2","inverse-surface":"#25342a","outline":"#707a6c","tertiary-fixed-dim":"#bac9d3","inverse-primary":"#88d982","on-secondary-fixed":"#002105","secondary-fixed":"#9ff79f","on-primary-fixed-variant":"#005312","surface-bright":"#ecfeef","surface-container-lowest":"#ffffff","tertiary-container":"#627079","on-primary-fixed":"#002204"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter-mobile":"1rem","margin-mobile":"1rem","space-xl":"2.5rem",gutter:"1.5rem",margin:"2rem","space-lg":"1.5rem"},fontFamily:{"label-lg":["Plus Jakarta Sans"],"body-md":["Nunito Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Nunito Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Nunito Sans"],"label-md":["Plus Jakarta Sans"]},fontSize:{"label-lg":["16px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-lg-mobile":["24px",{lineHeight:"32px",fontWeight:"700"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"700"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-md":["14px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-sm py-space-xs"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">eco</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">KisaanSahyog</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">किसान सहायता पोर्टल</span></div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-bold shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="ai-shayog" href="#"><span class="material-symbols-outlined text-[20px]">chat</span><span>AI Shayog</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-3 rounded-xl transition-all duration-150 bg-primary-container text-on-primary font-bold shadow-sm" data-path="marketplace" href="#"><span class="material-symbols-outlined text-[20px]">storefront</span><span>Marketplace</span></a><a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="cost-profit" href="#"><span class="material-symbols-outlined text-[20px]">calculate</span><span>Cost &amp; Profit</span></a><a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="alerts-notifications" href="#"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Alerts / Notifications</span></a><a class="flex items-center gap-space-sm px-space-md py-3 rounded-xl text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="profile" href="#"><span class="material-symbols-outlined text-[20px]">person</span><span>Profile</span></a></nav></div><div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs text-primary"><span class="material-symbols-outlined text-[18px]">support_agent</span><span class="font-label-sm text-label-sm font-bold">Kisaan Call Center</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Toll Free: 1800-180-1551</p></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex-1 max-w-xl"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-outline text-[20px] pointer-events-none">search</span><input class="w-full pl-11 pr-12 py-2.5 rounded-full bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-surface-container-lowest transition-all" placeholder="फसल का भाव, मौसम, या योजना खोजें... (Search crops, mandi bhav, schemes)" type="text"/><button class="absolute right-space-sm w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:opacity-90 transition-opacity" title="Speak in Hindi or regional language" type="button"><span class="material-symbols-outlined text-[18px]">mic</span></button></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed hover:bg-tertiary-fixed-dim transition-colors" type="button"><span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span><span class="font-label-sm text-label-sm font-bold">AI Sahayak</span></button><button class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center leading-none">3</span></button><div class="flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm cursor-pointer hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[16px] text-primary">translate</span><span>हिन्दी / EN</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="h-7 w-[1px] bg-surface-variant"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface font-bold leading-tight">Rameshwar Patel</span><span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px] text-secondary">verified</span>Verified Kisan</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 min-h-screen bg-background w-full px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Active Navigation Sync Script -->
+<script>
+    (function syncActiveNav() {
+      const links = document.querySelectorAll('aside nav a');
+      links.forEach(link => {
+        if (link.getAttribute('data-path') === 'marketplace') {
+          link.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+          link.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+        } else {
+          link.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+          link.classList.add('text-on-surface-variant');
+        }
+      });
+    })();
+  </script>
+<!-- Marketplace Header & Quick Stats -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-xl">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Kisaan Direct Mandi Network • शून्य कमीशन प्लेटफॉर्म</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Direct Crop Marketplace</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+        List your produce, set your own fair price, connect with verified buyers directly.
+      </p>
+</div>
+<!-- Quick Metrics & CTA -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs px-4 py-2 rounded-full bg-surface-container-low shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface font-bold">3 Active Listings</span>
+</div>
+<div class="flex items-center gap-space-xs px-4 py-2 rounded-full bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">handshake</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">4 Token Offers</span>
+</div>
+<div class="flex items-center gap-space-xs px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container shadow-sm">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+<span class="font-label-md text-label-md font-bold">0% Middlemen Cut</span>
+</div>
+<button class="flex items-center gap-space-xs px-6 py-3 rounded-full bg-primary-container text-on-primary hover:opacity-95 shadow-sm transition-all duration-200" id="toggle-listing-btn" onclick="toggleListingForm()" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span class="font-label-lg text-label-lg font-bold">+ Add New Crop Listing</span>
+</button>
+</div>
+</section>
+<!-- 12-Column Responsive Grid Layout -->
+<div class="grid grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (8 cols): Creation Form + Active Crop Inventory -->
+<div class="col-span-12 xl:col-span-8 flex flex-col gap-space-xl">
+<!-- Expandable Add Crop Listing Card -->
+<section class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg flex flex-col gap-space-lg" id="listing-form-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">agriculture</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">फसल लिस्टिंग जोड़ें (Create Produce Listing)</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reach 4,500+ FPOs, direct millers &amp; retail buyers pan-India</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">
+            Step 1 of 2
+          </span>
+</div>
+<form class="flex flex-col gap-space-lg" onsubmit="handleNewListing(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Crop Selection -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="crop-name">Crop &amp; Variety / फसल का नाम</label>
+<div class="relative">
+<select class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer" id="crop-name">
+<option value="sharbati_wheat">Sharbati Wheat / शरबती गेहूं (Grade A)</option>
+<option value="soybean">Yellow Soybean / पीला सोयाबीन (JS 335)</option>
+<option value="chana">Kabuli Chana / डॉलर चना (Export Grade)</option>
+<option value="mustard">Mustard Seed / सरसों (42% Oil Content)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-outline">unfold_more</span>
+</div>
+</div>
+<!-- Harvest Quantity -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="crop-quantity">Available Quantity / कुल मात्रा</label>
+<div class="relative">
+<input class="w-full h-12 pl-4 pr-16 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container" id="crop-quantity" placeholder="e.g. 150" type="number" value="150"/>
+<span class="absolute right-4 top-3 font-label-md text-label-md text-on-surface-variant pointer-events-none">Quintal</span>
+</div>
+</div>
+</div>
+<!-- Price & Benchmark Intelligence Section -->
+<div class="flex flex-col gap-space-xs bg-surface-container-low rounded-xl p-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md items-center">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-bold" for="crop-price">Your Expected Price / प्रति क्विंटल दर</label>
+<div class="relative">
+<span class="absolute left-4 top-3 font-headline-sm text-headline-sm text-on-surface pointer-events-none">₹</span>
+<input class="w-full h-12 pl-9 pr-14 rounded-xl bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm font-bold focus:outline-none focus:ring-2 focus:ring-primary-container" id="crop-price" type="number" value="2650"/>
+<span class="absolute right-4 top-3.5 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">/ Quintal</span>
+</div>
+</div>
+<!-- Price Benchmark Chips -->
+<div class="flex flex-col gap-space-xs justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">insights</span> Real-Time Mandi Intelligence:
+                </span>
+<div class="flex flex-wrap items-center gap-space-xs">
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                    Govt MSP: <span class="font-bold text-primary">₹2,275</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+                    Sehore Mandi Avg: <span class="font-bold text-on-surface">₹2,510</span>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                    +₹140 vs Mandi
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Ready to Dispatch Date -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="dispatch-date">Ready to Dispatch / फसल तैयारी की तारीख</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container cursor-pointer" id="dispatch-date" type="date" value="2025-04-05"/>
+</div>
+</div>
+<!-- Visual Harvest Quality Proof -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface">Lot Sample Photo / फसल फोटो</label>
+<div class="flex items-center gap-space-sm h-12">
+<div class="w-14 h-12 rounded-xl overflow-hidden shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up high quality macro photograph of golden sunlit sharbati wheat grain lot spread over clean farmer hands, high resolution agricultural purity detail with natural earthen background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK62J__9kJtUiMJ_8MrIl9DBd1qZNkPReQWkCpkIPsrcIUzZmCLMylolMonbUBVb_GCmHEhJc8eSPCvhJcV3oftvToaEVOWLczwdJMqL8TLwVbQ_lic_KI0e3K6VxAu4n5tLhJgEHasktN3z5pEjM-siAVdEHYZVVM7LN6xWbZj1CvTp9oIVTvfYmJZn0jfki21JU3rlNsNSw1LT18RjcyNc45c5drBHblViM5UZU"/>
+</div>
+<button class="flex-1 h-full px-4 rounded-xl bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">add_a_photo</span>
+<span>Update Photo (1 Attached)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI-filled Quality Description -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="crop-desc">
+<span>Produce Specifications &amp; Lab Quality</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> AI Verified
+                </span>
+</label>
+<button class="text-primary font-label-sm text-label-sm hover:underline" type="button">Re-generate summary</button>
+</div>
+<textarea class="w-full p-3.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary-container resize-none" id="crop-desc" rows="2">100% sortex cleaned, moisture level &lt; 10%, grown with organic compost. Certified zero pesticide residue testing passed via Krishi Vigyan Kendra Sehore.</textarea>
+</div>
+<!-- Visibility Radius Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-on-surface">Target Buyer Radius / बिक्री क्षेत्र</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm" role="radiogroup">
+<label class="flex items-center gap-space-sm p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input class="w-4 h-4 text-primary focus:ring-primary" name="visibility" type="radio" value="local"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">My Region (50km)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Local mandis &amp; mills</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input class="w-4 h-4 text-primary focus:ring-primary" name="visibility" type="radio" value="interstate"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Inter-district &amp; State</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">MP, Maharashtra, Gujarat</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-3 rounded-xl bg-surface-container-low cursor-pointer hover:bg-surface-container transition-all">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary" name="visibility" type="radio" value="nationwide"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-1">
+                    ★ Nationwide Delivery
+                  </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Highest buyer reach</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Form Action CTA -->
+<div class="flex items-center justify-end gap-space-md pt-space-xs">
+<button class="px-5 py-3 rounded-full text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-colors" onclick="document.getElementById('listing-form-card').reset()" type="button">
+              Clear Draft
+            </button>
+<button class="flex items-center gap-space-xs px-8 py-3.5 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg hover:opacity-95 shadow-sm transition-all duration-200" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Publish Listing to Marketplace (लाइव करें)</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Section: My Active Produce Listings -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">मेरे सक्रिय लॉट (My Active Listings)</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-bold">2 active</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors">
+              Filter: All Grains
+            </button>
+</div>
+</div>
+<!-- Listing Cards Array -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Card 1: Sharbati Wheat -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between gap-space-md transition-all duration-200 hover:shadow-md">
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Crisp close up macro view of golden amber sharbati wheat grains in a clean woven jute burlap sack on Indian farm soil, warm gentle sun flare, premium grading agriculture photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhM2gwD9QeU6hAIcI4KsDtdKMxGtAgY9SKsLAH3oOTTp3bz3FOWEt7JmFrqw8z0JPS-7XbnUSzKLch808iEJEYvCxD_tBWMeMRkIVT9Y3Y2lxxT9Vb35MWEd4d-GiPeJalso86xg9s5erzsx1UmbFH_p5TBzi8SQKVZ3WC5El4c_meOe1uj7eH83PSwJJnoY2siGeU7n6mwF8YGdjMNb8X6Eom6ALB8cq5TY2MXc8"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold shadow-sm">
+                  Active • 3 Offers
+                </span>
+<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm">
+                  Lot #SH-8842
+                </span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Cereal • शरबती गेहूं</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Sharbati Wheat (Grade A)</h3>
+</div>
+<div class="flex items-baseline justify-between p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Listing Rate</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">₹2,650 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ qtl</span></span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Available Lot</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">150 Qtl</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">local_shipping</span>
+<span>Dispatch ready from Sehore Godown • 100% sortex</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 py-2.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors" type="button">
+                Edit Listing
+              </button>
+<button class="flex-1 py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md hover:opacity-95 transition-opacity flex items-center justify-center gap-1" onclick="scrollBuyerOffers()" type="button">
+<span>Review Offers</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2: Yellow Soybean -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col justify-between gap-space-md transition-all duration-200 hover:shadow-md">
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Harvested yellow soybean legume seeds heap in bright daytime rural warehouse container, healthy high oil crop grains in agricultural farm storage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRGIBUFX2eq39ZdBDO556oJ8kbbdk8y9-4Uqzxzhy_yN3EufhaTuPyXglRdlsFrn0V_IpzTo0U6ld8p7O0cdvCPvYgsmbo_tFF8zGAdYB6bh-zrEYZTKpOfxo1oMAeSekZtIIj8bHrYLa_VJaYejyh6vIkxs5cJyozt3NvR3PJzIZFPzGKayv6d_NoiNk82xdzXFMZHBmFn8jyWnSUIdVuXSGVVjLFkb1H1XrA4Rc"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold shadow-sm">
+                  1 Deal In Progress
+                </span>
+<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm">
+                  Lot #SB-4109
+                </span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Oilseed • पीला सोयाबीन</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Yellow Soybean (JS 335)</h3>
+</div>
+<div class="flex items-baseline justify-between p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Listing Rate</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">₹4,850 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">/ qtl</span></span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Available Lot</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">80 Qtl</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">fact_check</span>
+<span>Moisture tested: 9.2% • Quality certified</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 py-2.5 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors" type="button">
+                View Contract
+              </button>
+<button class="flex-1 py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+<span>In Escrow</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Trust Assurance Strip -->
+<section class="p-space-lg rounded-2xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">shield</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Escrow Protected Direct Payment</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Buyer advance tokens are locked safely in institutional bank escrow before truck dispatch. No payment delays.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md font-bold flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+<span>Krishi Mantralaya Verified</span>
+</div>
+</section>
+</div>
+<!-- Right Column (4 cols): Incoming Buyer Token Offers Panel -->
+<aside class="col-span-12 xl:col-span-4 flex flex-col gap-space-lg" id="buyer-offers-section">
+<!-- Panel Header -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">currency_rupee</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Incoming Token Offers</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+            2 Action Req.
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Verified corporate buyers and FPOs ready to lock advance tokens into your escrow wallet.
+        </p>
+<!-- Offer Card 1: AgroPure Foods Ltd -->
+<article class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md transition-all duration-200" id="offer-card-1">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified Miller
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">AgroPure Foods Ltd</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Indore Industrial Area, MP</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+              10m ago
+            </span>
+</div>
+<!-- Proposal Terms Breakdown -->
+<div class="grid grid-cols-2 gap-space-xs p-space-sm rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offered Rate</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₹2,620<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">/qtl</span></span>
+<span class="font-label-sm text-label-sm text-error font-medium">-₹30 vs Listed</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Demand Quantity</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">100 Qtl</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Bulk Lift</span>
+</div>
+</div>
+<!-- Advance Token Guarantee Tag -->
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-secondary-container/60 text-on-secondary-container">
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>Advance Token:</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-extrabold">₹25,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Requested Lot: <strong class="text-on-surface">Sharbati Wheat Grade A</strong>. Self pickup arranged via 10-wheeler fleet.
+          </p>
+<!-- Decision Action CTA Row -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full h-11 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold hover:opacity-95 shadow-sm flex items-center justify-center gap-1.5 transition-all" onclick="acceptOffer('offer-card-1', 'AgroPure Foods Ltd', '₹2,620/qtl', '₹25,000')" type="button">
+<span class="material-symbols-outlined text-[20px]">check</span>
+<span>Accept Deal &amp; Lock Token</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="h-10 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" onclick="openNegotiateModal('AgroPure Foods Ltd', '₹2,620/qtl')" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Negotiate / Chat</span>
+</button>
+<button class="h-10 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-error-container hover:text-on-error-container transition-colors flex items-center justify-center gap-1" onclick="declineOffer('offer-card-1')" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Decline</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Offer Card 2: KisanVeda Organics -->
+<article class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md transition-all duration-200" id="offer-card-2">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">eco</span> Direct Retailer
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">Full Price Match</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">KisanVeda Organics</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bhopal Hub, MP</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+              35m ago
+            </span>
+</div>
+<!-- Proposal Terms Breakdown -->
+<div class="grid grid-cols-2 gap-space-xs p-space-sm rounded-lg bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Offered Rate</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹2,650<span class="font-body-sm text-body-sm font-normal text-on-surface-variant">/qtl</span></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">100% Listed Fair Price</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Demand Quantity</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">50 Qtl</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ready packaging</span>
+</div>
+</div>
+<!-- Advance Token Guarantee Tag -->
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-secondary-container/60 text-on-secondary-container">
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>Advance Token:</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-extrabold">₹15,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Acceptance automatically locks ₹15,000 token in escrow. Buyer covers loading &amp; labor charges.
+          </p>
+<!-- Decision Action CTA Row -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<button class="col-span-2 h-11 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold hover:opacity-95 shadow-sm flex items-center justify-center gap-1.5 transition-all" onclick="acceptOffer('offer-card-2', 'KisanVeda Organics', '₹2,650/qtl', '₹15,000')" type="button">
+<span class="material-symbols-outlined text-[20px]">check</span>
+<span>Accept Deal ✓</span>
+</button>
+<button class="h-11 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-error-container hover:text-on-error-container transition-colors flex items-center justify-center gap-1" onclick="declineOffer('offer-card-2')" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Decline ✕</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Quick Mandi Bhav Ticker Widget -->
+<section class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Live Regional Mandi Bhav</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Updated 10m ago</span>
+</div>
+<div class="flex flex-col divide-y divide-surface-variant/40">
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Sehore Mandi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Wheat (Grade A)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹2,510/qtl</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">+₹35 today</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Ujjain APMC</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Soybean (Yellow)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹4,780/qtl</span>
+<span class="font-label-sm text-label-sm text-error font-medium">-₹15 today</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Vidisha Mandi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Chana (Kabuli)</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">₹6,200/qtl</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">+₹80 today</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Vernacular Audio Help Card -->
+<section class="bg-surface-container rounded-2xl p-space-md flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<button class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 hover:opacity-90 transition-opacity" type="button">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">ऑफर कैसे स्वीकार करें?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Listen audio guide in Hindi (1 min)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">play_circle</span>
+</section>
+</aside>
+</div>
+<!-- Interactive Feedback Toast Container -->
+<div class="fixed bottom-6 right-6 max-w-md bg-inverse-surface text-inverse-on-surface px-5 py-4 rounded-2xl shadow-xl flex items-center gap-space-sm opacity-0 translate-y-6 pointer-events-none transition-all duration-300 z-50" id="marketplace-toast">
+<span class="material-symbols-outlined text-primary-fixed text-[24px]" id="toast-icon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold" id="toast-title">Deal Accepted!</span>
+<span class="font-body-sm text-body-sm opacity-90" id="toast-message">Escrow deposit has been secured in your account.</span>
+</div>
+</div>
+<!-- Interactive Client-side Script -->
+<script>
+    function showNotification(title, message, isSuccess = true) {
+      const toast = document.getElementById('marketplace-toast');
+      const toastTitle = document.getElementById('toast-title');
+      const toastMsg = document.getElementById('toast-message');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastTitle.textContent = title;
+      toastMsg.textContent = message;
+      toastIcon.textContent = isSuccess ? 'check_circle' : 'info';
+
+      toast.classList.remove('opacity-0', 'translate-y-6', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-6', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 4000);
+    }
+
+    function toggleListingForm() {
+      const card = document.getElementById('listing-form-card');
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      card.classList.add('ring-2', 'ring-primary-container');
+      setTimeout(() => card.classList.remove('ring-2', 'ring-primary-container'), 1000);
+    }
+
+    function scrollBuyerOffers() {
+      const target = document.getElementById('buyer-offers-section');
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function handleNewListing(e) {
+      e.preventDefault();
+      const crop = document.getElementById('crop-name').value;
+      const qtl = document.getElementById('crop-quantity').value;
+      const price = document.getElementById('crop-price').value;
+
+      showNotification(
+        'फसल लिस्ट हो गई! (Listing Published)', 
+        `${qtl} Quintal Sharbati Wheat listed at ₹${price}/qtl pan-India.`
+      );
+    }
+
+    function acceptOffer(cardId, buyerName, rate, token) {
+      const card = document.getElementById(cardId);
+      card.classList.add('opacity-60', 'scale-[0.98]');
+      setTimeout(() => {
+        card.innerHTML = `
+          <div class="p-space-md rounded-xl bg-secondary-container/40 flex flex-col items-center justify-center text-center gap-space-xs">
+            <span class="material-symbols-outlined text-[32px] text-secondary">verified</span>
+            <span class="font-headline-sm text-headline-sm text-on-surface font-bold">Deal Locked with ${buyerName}!</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">Escrow token of ${token} credited to holding. Transport verification pending.</span>
+            <button class="mt-2 px-4 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">Download Digital Parchi</button>
+          </div>
+        `;
+        card.classList.remove('opacity-60', 'scale-[0.98]');
+      }, 350);
+
+      showNotification(
+        'Deal Accepted ✓', 
+        `${buyerName} has been informed. Token of ${token} secured in Escrow.`
+      );
+    }
+
+    function declineOffer(cardId) {
+      const card = document.getElementById(cardId);
+      card.classList.add('opacity-40');
+      setTimeout(() => {
+        card.style.display = 'none';
+      }, 300);
+      showNotification('Offer Declined', 'The buyer has been notified of your response.', false);
+    }
+
+    function openNegotiateModal(buyer, currentRate) {
+      showNotification(
+        `Chat Window Opened`, 
+        `Direct vernacular messenger connected with ${buyer}. Current proposal: ${currentRate}.`,
+        false
+      );
+    }
+  </script>
+</div></main></div></body></html>

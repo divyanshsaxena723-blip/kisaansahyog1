@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed-variant": "#004a75", "on-primary-container": "#cbffc2", "on-surface": "#101f16", "on-surface-variant": "#40493d", "outline": "#707a6c", "surface-container-high": "#dbedde", "surface-variant": "#d5e7d9", "on-tertiary-container": "#e9f2ff", "surface-container-highest": "#d5e7d9", "outline-variant": "#bfcaba", "on-secondary-fixed-variant": "#005318", "surface-container-low": "#e7f8e9", "surface-bright": "#ecfeef", "surface-dim": "#cdded0", "inverse-primary": "#88d982", "primary": "#0d631b", "on-error": "#ffffff", "on-primary-fixed": "#002204", "on-secondary-container": "#19722b", "on-secondary-fixed": "#002105", "inverse-on-surface": "#e4f5e7", "on-secondary": "#ffffff", "on-tertiary-fixed": "#001d32", "error": "#ba1a1a", "secondary-fixed": "#9ff79f", "tertiary-fixed": "#cee5ff", "surface-container": "#e1f2e4", "inverse-surface": "#25342a", "surface-tint": "#1b6d24", "tertiary": "#005a8c", "secondary-fixed-dim": "#83da85", "background": "#ecfeef", "primary-fixed-dim": "#88d982", "on-error-container": "#93000a", "surface": "#ecfeef", "tertiary-container": "#0073b2", "on-primary": "#ffffff", "tertiary-fixed-dim": "#96ccff", "secondary-container": "#9cf49c", "on-tertiary": "#ffffff", "secondary": "#126d27", "primary-fixed": "#a3f69c", "error-container": "#ffdad6", "primary-container": "#2e7d32", "surface-container-lowest": "#ffffff", "on-background": "#101f16", "on-primary-fixed-variant": "#005312" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "margin-desktop": "2rem", "gutter": "1rem", "space-xl": "2.25rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-md": "1rem", "margin": "1rem", "gutter-sm": "0.75rem", "margin-tablet": "1.5rem", "space-sm": "0.5rem" }, fontFamily: { "title-md": ["Nunito Sans"], "headline-xl": ["Nunito Sans"], "headline-lg": ["Nunito Sans"], "body-lg": ["Nunito Sans"], "headline-md": ["Nunito Sans"], "headline-xl-mobile": ["Nunito Sans"], "body-md": ["Nunito Sans"], "label-md": ["Nunito Sans"], "headline-lg-mobile": ["Nunito Sans"], "label-lg": ["Nunito Sans"] }, fontSize: { "title-md": ["17px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "700" }], "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#ecfeef;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-lg text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="KisaanSahyog Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V558VePjpA3DvIorZSxYhF0kngbidLV54NGIHYgPWUQU5tcvHsLBiw2J-mCYAXVgfiJb5Sa0lnVtzJwng0ILGVGRU6hh0jPEjbVWuj8AX8IjYJYxU2lJMe-ctXRJUzoeaeZtD1yERgUZFDdHSL9lxmreJp8ZvwavqehVOCajeb5vbKJvZR-3srHa-DBbMovEk8pVjHeqt8SXAAU5gdH_yyPkj8HQqi0hRY28-jX9TA"/><h1 class="font-title-md text-title-md text-on-surface">Crop Detail Analysis</h1></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface px-margin"><div class="flex flex-col w-full pb-36">
+<!-- Top Navigation Utility Row -->
+<div class="flex items-center justify-between py-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        Active Farm Listing
+      </span>
+<span class="text-on-surface-variant font-label-md text-label-md">Verified Today</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button aria-label="Share Deal" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm" id="shareBtn">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button aria-label="Bookmark Crop" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-transform active:scale-95 shadow-sm" id="bookmarkBtn">
+<span class="material-symbols-outlined text-[20px]" id="bookmarkIcon">favorite_border</span>
+</button>
+</div>
+</div>
+<!-- Hero Image & Quality Badge Section -->
+<div class="relative w-full rounded-lg overflow-hidden shadow-md bg-surface-container-low mb-space-md">
+<div class="w-full h-64 sm:h-80 bg-cover bg-center transition-transform duration-500 hover:scale-105" data-alt="Close up photograph of premium Sharbati wheat grains glowing under warm golden morning harvest sunlight. Farmer hands holding organic plump golden kernels in an open Madhya Pradesh field. Earthy pastoral tones with warm amber highlights, high agricultural documentary quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC16mpFXZQLULcWiEEoKQNeE31KZh2XiDkcdOR0Eim5nbZ7lBtaxxoQpYPv-MhvMky_H69YzAfWJBX9vdXgYv0q5IFcc25dxV5VmyzgywovKZpnycLaJ99pj1NrqSHz-6qCxZfUnPDOKcq9gRsA3wdLp7UV-_2y3l2aWsn4AO1IylMoqNjr4qTcgMm7TInHlY7nk-jJiBt6LSM_KXBbLkQcJykZU6ZCiWJFqSBAg7k')">
+</div>
+<!-- Gradient Scrim for contrast -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+<!-- Quality Tag Pill Overlay -->
+<div class="absolute top-3 left-3 flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md font-bold tracking-tight">Moisture: 10.2% • Lab Cleaned</span>
+</div>
+<!-- Live Batch Micro-badge -->
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-primary">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary-fixed text-[16px]">grade</span> Grade A1 Sharbati
+      </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span> 4 Photos • Video QC
+      </span>
+</div>
+</div>
+<!-- Crop Overview Card -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm mb-space-md">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Sharbati Wheat (शरबती गेहूँ)</h2>
+<span class="font-label-md text-label-md text-on-surface-variant">Lot #204 • Direct Farmgate Stock</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md flex-shrink-0">
+        Direct Kisaan
+      </span>
+</div>
+<!-- Pricing Highlight Block -->
+<div class="my-space-md p-space-md rounded-DEFAULT bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-primary font-extrabold tracking-tight">₹2,850</span>
+<span class="font-title-md text-title-md text-on-surface-variant font-medium">/ Quintal</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-[18px]">handshake</span>
+<span>Fixed Farmgate Price • <strong>0% Middleman Margin</strong></span>
+</div>
+</div>
+<!-- Availability & Harvest Metadata -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="flex items-center gap-3 p-3 rounded-DEFAULT bg-surface-container">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Available Quantity</span>
+<span class="font-body-lg text-body-lg font-bold text-on-surface">120 Qtl <span class="font-body-md text-body-md font-normal text-on-surface-variant">(Min: 25 Qtl)</span></span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-DEFAULT bg-surface-container">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Ready for Pickup</span>
+<span class="font-body-lg text-body-lg font-bold text-on-surface">Immediate Loading</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quantity Calculator Interactive Widget -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-title-md text-title-md text-on-surface">Select Order Quantity</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold" id="selectedQtyBadge">40 Quintals</span>
+</div>
+<!-- Stepper Slider Hybrid -->
+<div class="flex items-center gap-3 my-2">
+<button aria-label="Decrease quantity" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all text-[24px] font-bold" id="decrementQty">
+        -
+      </button>
+<div class="flex-1 flex flex-col items-center">
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" id="qtySlider" max="120" min="25" step="5" type="range" value="40"/>
+<div class="flex justify-between w-full mt-1.5 font-label-md text-label-md text-on-surface-variant">
+<span>Min: 25 Qtl</span>
+<span>Max: 120 Qtl</span>
+</div>
+</div>
+<button aria-label="Increase quantity" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high active:scale-95 transition-all text-[24px] font-bold" id="incrementQty">
+        +
+      </button>
+</div>
+</div>
+<!-- Farmer Information Card -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm mb-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Producer Profile</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">security</span>
+        Direct Mandi Escrow Protected
+      </span>
+</div>
+<div class="flex items-start gap-3 pb-space-sm">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-container-high flex-shrink-0 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling Indian farmer Ramchandra Patel wearing a traditional white kurta and turban outdoors with warm sunlit rural background in Madhya Pradesh, high resolution, respectful human documentary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXxfwmoeDnhX4E27k4bQp34u_Mr9RfP3A-hmEocwFq33rPc9MtvT_YZkovtFJ7msCvkL3Wyynx51L0VZis_s-fdP44iNoaO4P6CIJp0sarXWZJqg7R3fRNoTy0zry25WV5pCMpYFScnhZlhyvuQJ8ADN_eyEQIrilPLLbLk9wnQpMTrb0DfCmaFpajV0OZSIS5AzOogW_2_BuWhZFWj-wNTe_dFtAnA0LtAWcSAxI"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-md text-headline-md text-on-surface">Ramchandra Patel</h3>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Kisaan ID: <strong class="text-on-surface">#MP-8204</strong></span>
+<div class="inline-flex items-center gap-1 mt-1 text-on-surface-variant font-label-md text-label-md">
+<span class="text-primary font-bold">★ 4.9</span>
+<span>• 12 past successful harvests fulfilled</span>
+</div>
+</div>
+</div>
+<!-- Farmer Detailed Badges -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t-0">
+<div class="flex items-center gap-2 p-2.5 rounded-DEFAULT bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+<span class="font-body-md text-body-md leading-tight">Pipariya, Dist. Hoshangabad, MP</span>
+</div>
+<div class="flex items-center gap-2 p-2.5 rounded-DEFAULT bg-surface-container-low text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">landscape</span>
+<span class="font-body-md text-body-md leading-tight">4.5 Acres • Black Alluvial Soil</span>
+</div>
+</div>
+<!-- Interactive Contact/Direct Inquiry Button -->
+<div class="mt-space-sm flex gap-space-sm">
+<button class="flex-1 py-3 px-4 rounded-full bg-surface-container flex items-center justify-center gap-2 text-on-surface hover:bg-surface-container-high transition-colors font-label-lg text-label-lg active:scale-98">
+<span class="material-symbols-outlined text-primary text-[20px]">chat</span>
+        Chat with Farmer
+      </button>
+<button aria-label="Call farmer" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-surface-container-high active:scale-95 transition-all flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</button>
+</div>
+</div>
+<!-- Deal Terms & Quality Specifications -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm mb-space-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment</span>
+      Quality &amp; Loading Specifications
+    </h3>
+<div class="space-y-space-sm">
+<!-- Item 1 -->
+<div class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">package_2</span>
+</div>
+<div class="flex-1">
+<span class="font-label-lg text-label-lg text-on-surface block">Packaging Format</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Gunny bags (50kg each, standard double stitched export quality).</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">science</span>
+</div>
+<div class="flex-1">
+<span class="font-label-lg text-label-lg text-on-surface block">Moisture &amp; Cleanliness Test</span>
+<span class="font-body-md text-body-md text-on-surface-variant">10.2% verified by Sahyog Local Agronomist (Sun-dried, 0.4% foreign matter).</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">agriculture</span>
+</div>
+<div class="flex-1">
+<span class="font-label-lg text-label-lg text-on-surface block">Loading Access</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Direct farm gate tractor &amp; multi-axle truck access ready with loading labor available.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust & Buyer Reassurance Card -->
+<div class="w-full bg-secondary-container rounded-lg p-space-md shadow-sm mb-space-md text-on-secondary-container">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md font-bold text-on-secondary-container">Sahyog 100% Escrow Guarantee</h4>
+<p class="font-body-md text-body-md opacity-90 mt-0.5">Your token stays safely in bank escrow until you physically inspect and release shipment at the farm gate.</p>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom CTA Dock -->
+<div class="fixed bottom-0 inset-x-0 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-8px_24px_rgba(0,0,0,0.08)] px-margin py-3 z-40">
+<div class="max-w-lg mx-auto flex flex-col gap-2">
+<!-- Price & Escrow Summary Row -->
+<div class="flex items-center justify-between px-1">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Estimated Deal Value (<span id="summaryQty">40</span> Qtl)</span>
+<span class="font-headline-md text-headline-md text-primary font-extrabold" id="summaryTotal">₹1,14,000</span>
+</div>
+<div class="text-right flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Upfront Token</span>
+<span class="font-label-lg text-label-lg text-secondary font-bold" id="summaryToken">₹15,000 in Escrow</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-14 rounded-[24px] bg-primary text-on-primary flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-md hover:brightness-105 active:scale-98 transition-all" id="ctaRequestBtn">
+<span>Send Token Request (टोकन अनुरोध भेजें)</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const qtySlider = document.getElementById('qtySlider');
+    const decrementBtn = document.getElementById('decrementQty');
+    const incrementBtn = document.getElementById('incrementQty');
+    const selectedQtyBadge = document.getElementById('selectedQtyBadge');
+    const summaryQty = document.getElementById('summaryQty');
+    const summaryTotal = document.getElementById('summaryTotal');
+    const summaryToken = document.getElementById('summaryToken');
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    const bookmarkIcon = document.getElementById('bookmarkIcon');
+    const shareBtn = document.getElementById('shareBtn');
+    const ctaBtn = document.getElementById('ctaRequestBtn');
+
+    const RATE_PER_QTL = 2850;
+
+    function updateCalculations(qty) {
+      qtySlider.value = qty;
+      selectedQtyBadge.textContent = qty + ' Quintals';
+      summaryQty.textContent = qty;
+      
+      const total = qty * RATE_PER_QTL;
+      summaryTotal.textContent = '₹' + total.toLocaleString('en-IN');
+      
+      // Token is calculated at roughly ~13-15% rounded to nearest thousand
+      const token = Math.round((total * 0.13) / 1000) * 1000;
+      summaryToken.textContent = '₹' + token.toLocaleString('en-IN') + ' in Escrow';
+    }
+
+    if (qtySlider) {
+      qtySlider.addEventListener('input', (e) => {
+        updateCalculations(parseInt(e.target.value, 10));
+      });
+    }
+
+    if (decrementBtn) {
+      decrementBtn.addEventListener('click', () => {
+        let current = parseInt(qtySlider.value, 10);
+        if (current > 25) {
+          updateCalculations(current - 5);
+        }
+      });
+    }
+
+    if (incrementBtn) {
+      incrementBtn.addEventListener('click', () => {
+        let current = parseInt(qtySlider.value, 10);
+        if (current < 120) {
+          updateCalculations(current + 5);
+        }
+      });
+    }
+
+    let isBookmarked = false;
+    if (bookmarkBtn && bookmarkIcon) {
+      bookmarkBtn.addEventListener('click', () => {
+        isBookmarked = !isBookmarked;
+        bookmarkIcon.textContent = isBookmarked ? 'favorite' : 'favorite_border';
+        bookmarkIcon.classList.toggle('text-error', isBookmarked);
+      });
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', () => {
+        if (navigator.share) {
+          navigator.share({
+            title: 'Sharbati Wheat Lot #204 - KisaanSahyog',
+            text: 'Check out this fresh verified Sharbati Wheat lot from Pipariya @ ₹2,850/Qtl',
+            url: window.location.href,
+          }).catch(() => {});
+        } else {
+          alert('Deal link copied to clipboard!');
+        }
+      });
+    }
+
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', () => {
+        const currentQty = qtySlider.value;
+        const totalFormatted = summaryTotal.textContent;
+        const confirmMsg = `Confirm Token Request for ${currentQty} Quintals (${totalFormatted})? Escrow deposit required: ${summaryToken.textContent.replace(' in Escrow', '')}`;
+        if (window.confirm(confirmMsg)) {
+          ctaBtn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span> Processing Request...`;
+          setTimeout(() => {
+            ctaBtn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span> Token Request Sent!`;
+            ctaBtn.classList.replace('bg-primary', 'bg-secondary');
+          }, 1200);
+        }
+      });
+    }
+  })();
+</script></main></body></html>
