@@ -1,3 +1,6 @@
+export type { SupportedLanguage } from '../utils/translations';
+export { TRANSLATIONS } from '../utils/translations';
+
 export type UserRole = 'farmer' | 'buyer';
 
 export type CropCategory = 'all' | 'cereals' | 'pulses' | 'oilseeds' | 'cash_crops';

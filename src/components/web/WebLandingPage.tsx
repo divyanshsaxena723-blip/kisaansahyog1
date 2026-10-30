@@ -158,9 +158,10 @@ export const WebLandingPage: React.FC<WebLandingPageProps> = ({
               type="button"
               onClick={toggleLanguage}
               className="flex items-center gap-1.5 bg-white hover:bg-stone-100 border border-stone-200 px-3.5 py-2 rounded-full text-xs font-black text-[#101F16] transition shadow-2xs"
+              title="Change Language"
             >
               <Languages className="w-3.5 h-3.5 text-[#2C5E2E]" />
-              <span>{language === 'hi' ? 'हिन्दी / EN' : 'English / हि'}</span>
+              <span>{language === 'pa' ? 'ਪੰਜਾਬੀ (PA)' : language === 'hi' ? 'हिन्दी (HI)' : 'English (EN)'}</span>
             </button>
 
             <button

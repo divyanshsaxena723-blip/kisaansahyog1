@@ -7,7 +7,8 @@ import {
   NotificationItem,
   FarmerProfile,
   BuyerProfile,
-  CostCalculatorState
+  CostCalculatorState,
+  SupportedLanguage
 } from '../types';
 import {
   INITIAL_FARMER_PROFILE,
@@ -29,7 +30,7 @@ interface AppState {
   currentPage: 'landing' | 'login' | 'dashboard';
   farmerTab: FarmerTab;
   buyerTab: BuyerTab;
-  language: 'hi' | 'en';
+  language: SupportedLanguage;
   isAuthenticated: boolean;
   userPhone: string;
   isAuthModalOpen: boolean;
@@ -59,7 +60,7 @@ interface AppState {
   setCurrentPage: (page: 'landing' | 'login' | 'dashboard') => void;
   setFarmerTab: (tab: FarmerTab) => void;
   setBuyerTab: (tab: BuyerTab) => void;
-  setLanguage: (lang: 'hi' | 'en') => void;
+  setLanguage: (lang: SupportedLanguage) => void;
   toggleLanguage: () => void;
   setIsAuthModalOpen: (open: boolean) => void;
   setIsTourOpen: (open: boolean) => void;
@@ -67,7 +68,11 @@ interface AppState {
   setIsVoiceModalOpen: (open: boolean) => void;
   setSelectedDealDetailId: (dealId: string | null) => void;
 
-  login: (roleOrPhone?: UserRole | string, phoneOrRole?: string | UserRole) => void;
+  login: (
+    roleOrPhone?: UserRole | string,
+    phoneOrRole?: string | UserRole,
+    profileMeta?: { name?: string; location?: string }
+  ) => void;
   logout: () => void;
 
   updateFarmerProfile: (profile: Partial<FarmerProfile>) => void;
@@ -156,14 +161,25 @@ export const useStore = create<AppState>()(
         setFarmerTab: (tab) => set({ farmerTab: tab }),
         setBuyerTab: (tab) => set({ buyerTab: tab }),
         setLanguage: (lang) => set({ language: lang }),
-        toggleLanguage: () => set((state) => ({ language: state.language === 'hi' ? 'en' : 'hi' })),
+        toggleLanguage: () => set((state) => {
+          const nextLang: Record<SupportedLanguage, SupportedLanguage> = {
+            hi: 'pa',
+            pa: 'en',
+            en: 'hi'
+          };
+          return { language: nextLang[state.language] || 'hi' };
+        }),
         setIsAuthModalOpen: (open) => set({ isAuthModalOpen: open }),
         setIsTourOpen: (open) => set({ isTourOpen: open }),
         setIsNotificationsOpen: (open) => set({ isNotificationsOpen: open }),
         setIsVoiceModalOpen: (open) => set({ isVoiceModalOpen: open }),
         setSelectedDealDetailId: (dealId) => set({ selectedDealDetailId: dealId }),
 
-        login: (roleOrPhone = 'farmer', phoneOrRole = '+91 94250 82194') => {
+        login: (
+          roleOrPhone = 'farmer',
+          phoneOrRole = '+91 94250 82194',
+          profileMeta?: { name?: string; location?: string }
+        ) => {
           let role: UserRole = 'farmer';
           let phone = '+91 94250 82194';
 
@@ -179,13 +195,41 @@ export const useStore = create<AppState>()(
             }
           }
 
-          set({
-            isAuthenticated: true,
-            userPhone: phone,
-            activeRole: role,
-            userRole: role,
-            currentPage: 'dashboard',
-            isAuthModalOpen: false
+          set((state) => {
+            const newState: Partial<AppState> = {
+              isAuthenticated: true,
+              userPhone: phone,
+              activeRole: role,
+              userRole: role,
+              currentPage: 'dashboard',
+              isAuthModalOpen: false
+            };
+
+            if (profileMeta?.name) {
+              if (role === 'farmer') {
+                newState.farmerProfile = { ...state.farmerProfile, name: profileMeta.name, phone: phone };
+              } else {
+                newState.buyerProfile = { ...state.buyerProfile, name: profileMeta.name, phone: phone };
+              }
+            }
+            if (profileMeta?.location) {
+              const parts = profileMeta.location.split(',').map((s) => s.trim());
+              if (role === 'farmer') {
+                newState.farmerProfile = {
+                  ...state.farmerProfile,
+                  district: parts[0] || state.farmerProfile.district,
+                  state: parts[1] || state.farmerProfile.state
+                };
+              } else {
+                newState.buyerProfile = {
+                  ...state.buyerProfile,
+                  city: parts[0] || state.buyerProfile.city,
+                  state: parts[1] || state.buyerProfile.state
+                };
+              }
+            }
+
+            return newState;
           });
         },
 

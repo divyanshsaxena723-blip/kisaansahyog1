@@ -92,7 +92,7 @@ export const Header: React.FC = () => {
               title="Change Language"
             >
               <Languages className="w-3.5 h-3.5 text-[#E0A526]" />
-              <span>{language === 'hi' ? 'EN' : 'हिन्दी'}</span>
+              <span>{language === 'pa' ? 'ਪੰਜਾਬੀ' : language === 'hi' ? 'हिन्दी' : 'EN'}</span>
             </button>
 
             {/* Tour Walkthrough Button */}

@@ -126,7 +126,7 @@ export const WebHeader: React.FC<WebHeaderProps> = ({
           title="Change Language"
         >
           <Languages className="w-3.5 h-3.5 text-[#E0A526]" />
-          <span>{language === 'hi' ? 'EN / हिन्दी' : 'हिन्दी / EN'}</span>
+          <span>{language === 'pa' ? 'ਪੰਜਾਬੀ (PA)' : language === 'hi' ? 'हिन्दी (HI)' : 'English (EN)'}</span>
         </button>
 
         <div className="h-6 w-[1px] bg-stone-200 hidden sm:block mx-0.5" />
